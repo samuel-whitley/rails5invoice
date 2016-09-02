@@ -9,7 +9,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
     @order = Order.new(order_params)
     @products = @order.products
     @products.each do |product|
@@ -31,6 +30,7 @@ class OrdersController < ApplicationController
   end
 
   def list
+  
     @products = Product.all.map(&:name)
     @products = @products.uniq.reject {|product| product.nil?}
     render json: @products
