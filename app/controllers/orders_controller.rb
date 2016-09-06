@@ -30,7 +30,6 @@ class OrdersController < ApplicationController
   end
 
   def list
-  
     @products = Product.all.map(&:name)
     @products = @products.uniq.reject {|product| product.nil?}
     render json: @products

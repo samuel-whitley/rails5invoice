@@ -1,7 +1,12 @@
 <%@orders.each do |order|%>
 
-<div class="text-center">
-  <%=order.try(:customer)%>
-</div>
+    <div class="text-center well col-xs-offset-4 col-xs-4">
+      <%=order.customer%>
+        <%order.products.each do |product|%>
+        <ul>
+          <li><%= product.name %></li>
+        </ul>
+        <%end%>
+    </div>
 
-  <%end%>
+<%end%>
