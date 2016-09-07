@@ -1,12 +1,19 @@
 <%@orders.each do |order|%>
 
-    <div class="text-center well col-xs-offset-4 col-xs-4">
-      <%=order.customer%>
+    <div class="well col-md-offset-2 col-md-8">
+      Name: <%=order.customer%>
+      <%=link_to "View Order", order_path(order), class: "btn btn-default btn-primary pull-right"%>
+      <div class="">
+        <h4 class"text-center"> Order Items</h3>
         <%order.products.each do |product|%>
-        <ul>
-          <li><%= product.name %></li>
+        <ul class="text-center">
+          <li><%= product.name%></li>
         </ul>
         <%end%>
+      </div>
+        <%=link_to "View Order", order_path(order), class: "btn btn-default btn-primary pull-left hidden-xs hidden-sm	"%>
+
+        <%=link_to "Edit Order", edit_order_path(order), class: "btn btn-default btn-primary pull-right hidden-xs	hidden-sm"%>
     </div>
 
 <%end%>

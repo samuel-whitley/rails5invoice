@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def show
-    @order = Order.find_by(id: params[:order][:id])
+    @order = Order.find_by(id: params[:id])
   end
 
   def index
@@ -27,6 +27,11 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    @order = Order.find_by(id: params[:id])
+  end
+
+  def update
+    binding.pry
   end
 
   def list

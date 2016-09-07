@@ -52,7 +52,7 @@ App.addField = function () {
     divName.append(inputName);
 
 
-    var list = $("#product_list")
+    var list = $(".product_list").last();
     list.append(divQuanity,divPrice,divName);
 
   }
