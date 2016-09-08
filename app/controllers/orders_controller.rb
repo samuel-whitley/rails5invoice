@@ -5,7 +5,11 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.all
+    if params[:q]
+      @orders = Order.search(params[:q]).order("created_at DESC")
+    else
+      @orders = Order.all
+    end
   end
 
   def create
@@ -31,7 +35,9 @@ class OrdersController < ApplicationController
   end
 
   def update
-    binding.pry
+    @order = Order.find_by(id: params[:id])
+    @order.update(order_params)
+    render :show
   end
 
   def list
@@ -40,10 +46,15 @@ class OrdersController < ApplicationController
     render json: @products
   end
 
+def search
+  binding.pry
+  @orders = Order.where(name: params[:q])
+end
+
 private
 
   def order_params
-    params.require(:order).permit(:customer, products_attributes: [:name, :quantity, :price])
+    params.require(:order).permit(:customer, products_attributes: [:id, :name, :quantity, :price])
   end
 
 end

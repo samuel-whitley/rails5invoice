@@ -38,14 +38,13 @@ App.addField = function () {
       name: nameAttrPrice
     })
 
-    inputName.addClass("form-control");
     divQuanity.addClass("col-xs-4");
     divPrice.addClass("col-xs-4");
     divName.addClass("col-xs-4");
 
-    inputQuanity.addClass("form-control");
-    inputName.addClass("tags")
-    inputPrice.addClass("form-control");
+    inputQuanity.addClass("quantity form-control");
+    inputName.addClass("tags form-control")
+    inputPrice.addClass("price form-control");
 
     divQuanity.append(inputQuanity);
     divPrice.append(inputPrice);
@@ -60,8 +59,7 @@ App.addField = function () {
 
   $(document).on("turbolinks:load", function(){
     App.auto();
-
-      $("#addItems").click(function(e){
+    $("#addItems").click(function(e){
         e.preventDefault
         App.addField();
         App.auto();

@@ -5,7 +5,7 @@
       <%=link_to "View Order", order_path(order), class: "btn btn-default btn-primary pull-right"%>
       <div class="">
         <h4 class"text-center"> Order Items</h3>
-        <%order.products.each do |product|%>
+        <%order.products[0..4].each do |product|%>
         <ul class="text-center">
           <li><%= product.name%></li>
         </ul>

@@ -9,7 +9,6 @@ App.auto = function() {
                 q: request.term
               },
               success: function(data) {
-                console.log(data)
                 response( data.length === 1 && data[ 0 ].length === 0 ? [] : data );
               },
               failure: function(data) {
