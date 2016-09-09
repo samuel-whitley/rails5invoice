@@ -6,4 +6,5 @@ class Order < ApplicationRecord
   scope :search, ->(quary) {
     where("customer ILIKE ?", "%#{quary}")
   }
+
 end

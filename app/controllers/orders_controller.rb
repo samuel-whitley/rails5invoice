@@ -46,10 +46,6 @@ class OrdersController < ApplicationController
     render json: @products
   end
 
-def search
-  binding.pry
-  @orders = Order.where(name: params[:q])
-end
 
 private
 
