@@ -7,4 +7,7 @@ class Order < ApplicationRecord
     where("customer ILIKE ?", "%#{quary}")
   }
 
+  def total_order
+    self.products
+  end
 end

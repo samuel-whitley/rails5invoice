@@ -20,6 +20,10 @@ App.addField = function () {
     var inputPrice = $("<input></input>");
     var inputName = $("<input></input>");
 
+    var labelQuanity = $("<label>Quantity</label>")
+    var labelPrice = $("<label>Price</label>")
+    var labelName = $("<label>Name</label>")
+
     inputName.attr({
       type: "text",
       id: idAttrName,
@@ -46,9 +50,9 @@ App.addField = function () {
     inputName.addClass("tags form-control")
     inputPrice.addClass("price form-control");
 
-    divQuanity.append(inputQuanity);
-    divPrice.append(inputPrice);
-    divName.append(inputName);
+    divQuanity.append(labelQuanity, inputQuanity);
+    divPrice.append(labelPrice, inputPrice);
+    divName.append(labelName, inputName);
 
 
     var list = $(".product_list").last();
