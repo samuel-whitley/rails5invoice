@@ -46,9 +46,9 @@ App.addField = function () {
     divPrice.addClass("col-xs-4");
     divName.addClass("col-xs-4");
 
-    inputQuanity.addClass("quantity form-control");
+    inputQuanity.addClass("quantity form-control tbag");
     inputName.addClass("tags form-control")
-    inputPrice.addClass("price form-control");
+    inputPrice.addClass("price form-control tbag");
 
     divQuanity.append(labelQuanity, inputQuanity);
     divPrice.append(labelPrice, inputPrice);

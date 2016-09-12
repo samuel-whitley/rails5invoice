@@ -8,6 +8,11 @@ class Order < ApplicationRecord
   }
 
   def total_order
-    self.products
+    totals = []
+    self.products.each do |product|
+      totals << product.quantity * product.price
+    end
+    totals.sum
   end
+
 end

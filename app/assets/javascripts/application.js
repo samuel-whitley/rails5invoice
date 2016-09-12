@@ -19,3 +19,4 @@
 //= require init.js
 //= require auto.js
 //= require field.js
+//= require order_total.js
