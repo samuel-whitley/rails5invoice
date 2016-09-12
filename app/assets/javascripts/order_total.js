@@ -14,4 +14,10 @@ $(document).on("turbolinks:load", function (){
   $(".tbag").blur(function(){
    $("#total").val(App.total());
   });
+
+  $("#addItems").click(function(e){
+    $(".tbag").blur(function(){
+     $("#total").val(App.total());
+    });
+  })
 });
