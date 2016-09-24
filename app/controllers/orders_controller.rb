@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     if params[:q]
       @orders = Order.search(params[:q]).order("created_at DESC")
     else
-      @orders = Order.all
+      @orders = Order.all.reverse
     end
   end
 
@@ -22,6 +22,9 @@ class OrdersController < ApplicationController
         respond_to do |format|
           format.html {render :show}
       end
+    else
+      flash[:alert] = @order.errors
+      render 'new'
     end
   end
 

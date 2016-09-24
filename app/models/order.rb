@@ -1,5 +1,7 @@
 class Order < ApplicationRecord
   has_many :products
+  validates :customer, presence: true
+  
 
   accepts_nested_attributes_for :products
 

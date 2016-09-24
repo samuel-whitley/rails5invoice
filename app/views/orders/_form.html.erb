@@ -1,3 +1,15 @@
+<%if flash.alert%>
+
+  <div class="alert alert-danger">
+    <%flash[:alert].each do |r,msg|%>
+      <ul>
+        <li><%=r%> : <%=msg%></li>
+      </ul>
+      <%end%>
+  </div>
+
+<%end%>
+
 <%=form_for @order, :html => {class: "form-horizontal-center well"} do |f| %>
 
 <div class="form-group">
